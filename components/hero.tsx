@@ -1,11 +1,12 @@
 import { Button } from "@/components/ui/button";
-import Image from "next/image";
 import Link from "next/link";
+import PhoneMock from "./phone-mock";
 
 export default function Hero() {
   return (
     <section aria-labelledby="hero" className="pt-10 md:pt-16">
       <div className="container px-4 md:px-6 max-w-6xl mx-auto grid gap-10 lg:grid-cols-2 items-center">
+        {/* Copy */}
         <div className="space-y-5">
           <h1
             id="hero"
@@ -27,7 +28,7 @@ export default function Hero() {
             </Button>
             <Button
               variant="outline"
-              className="border-[#EADFD6] text-[#181818]"
+              className="border-[#EADFD6] text-[#181818] bg-transparent"
               asChild
             >
               <Link href="#how-it-works">See how it works</Link>
@@ -38,21 +39,30 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="relative">
-          {/* Lightweight device frame mock */}
-          <div className="relative mx-auto w-full max-w-[420px] aspect-[9/19] rounded-[36px] border-2 border-[#EADFD6] bg-white shadow-sm overflow-hidden">
-            <div
-              className="absolute top-2 left-1/2 -translate-x-1/2 w-24 h-1.5 rounded-full bg-[#EADFD6]"
-              aria-hidden="true"
+        {/* Visual */}
+        <div className="relative mx-auto w-full max-w-[620px]">
+          {/* Soft background glow */}
+          <div
+            aria-hidden="true"
+            className="absolute -inset-x-6 -top-8 bottom-0 blur-2xl opacity-70"
+            style={{
+              background:
+                "radial-gradient(60% 50% at 70% 20%, rgba(249,216,216,0.8), rgba(255,248,240,0) 70%), radial-gradient(40% 40% at 30% 80%, rgba(215,38,56,0.18), rgba(255,248,240,0) 60%)",
+            }}
+          />
+          <div className="relative flex items-center justify-center h-full">
+            {/* Back phone (decorative) */}
+            <PhoneMock
+              tilt="left"
+              className="translate-x-10 translate-y-6 scale-[0.95] opacity-90"
             />
-            <Image
-              src="/nestvault-app-dashboard.png"
-              alt="NestVault app dashboard preview"
-              fill
-              className="object-cover"
-              sizes="(min-width: 1024px) 420px, 90vw"
-            />
+            {/* Front phone */}
+            <PhoneMock tilt="right" className="-translate-x-6 -translate-y-4" />
           </div>
+          <span className="sr-only">
+            Two smartphone mockups showing NestVault balance, chart, and
+            round-ups list
+          </span>
         </div>
       </div>
     </section>

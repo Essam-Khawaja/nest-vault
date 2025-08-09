@@ -31,8 +31,21 @@ export default function Page() {
       <main id="main" className="flex-1">
         <Hero />
         <Explainer />
-        <section aria-labelledby="impact" className="py-12 md:py-20">
+        <section aria-labelledby="impact" className="py-12 md:py-20 md:pt-7">
           <div className="container px-4 md:px-6 max-w-6xl mx-auto">
+            <Badge className="bg-[#F5EAE0] text-[#7A2A31] hover:bg-[#F5EAE0]">
+              Why Us?
+            </Badge>
+            <h2
+              id="how"
+              className="mt-3 text-2xl sm:text-3xl font-bold tracking-tight"
+            >
+              Round up purchases. Invest the difference. Grow, automatically.
+            </h2>
+            <p className="mt-2 mb-8 text-muted-foreground max-w-prose">
+              Link your everyday card and let NestVault do the rest—no
+              spreadsheets, no manual transfers.
+            </p>
             <div className="grid gap-6 sm:gap-8 md:grid-cols-3">
               <Card className="border-[#EADFD6] bg-white">
                 <CardHeader className="pb-2">
