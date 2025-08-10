@@ -18,16 +18,16 @@ export default function SiteNavbar() {
         </Link>
         <nav className="hidden md:flex items-center gap-6">
           <Link
-            href="#features"
-            className="text-sm hover:underline underline-offset-4"
-          >
-            Features
-          </Link>
-          <Link
             href="#how-it-works"
             className="text-sm hover:underline underline-offset-4"
           >
             How it works
+          </Link>
+          <Link
+            href="#features"
+            className="text-sm hover:underline underline-offset-4"
+          >
+            Features
           </Link>
           <Link
             href="#testimonials"
